@@ -1,0 +1,32 @@
+{
+  "name": "@dreamworld/dw-sample-npm-module",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "dw-sample-npm-module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DreamworldSolutions/dw-sample-npm-module.git"
+  },
+  "keywords": [
+    "lit",
+    "form"
+  ],
+  "author": "Chetan Goti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DreamworldSolutions/dw-sample-npm-module/issues"
+  },
+  "homepage": "https://github.com/DreamworldSolutions/dw-sample-npm-module#README",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "semantic-release": "beta"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
