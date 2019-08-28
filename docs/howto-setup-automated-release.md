@@ -27,6 +27,7 @@
 - Push this project to Github
 - Setup CircleCI for automated deployment
   - Open [CircleCI dashboard](https://circleci.com/add-projects/gh/DreamworldSolutions)
+  - User your Github account to login. (signup for CircleCI if you haven't)
   - Find this newly created project
   - Click on `Setup Project` button
   - Click on `Start Building` button
