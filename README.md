@@ -3,3 +3,5 @@ Sample npm module with deployment pipeline
 
 
 This is my awesome feature
+
+This is my awesome feature...
