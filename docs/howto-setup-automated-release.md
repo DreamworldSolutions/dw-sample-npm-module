@@ -1,43 +1,47 @@
-# How to setup automated CI/CD for package new or existing project
-
-- Create initial project with your desired build tool.
-- .gitignore:
-  - make sure `package-lock.json` is ignored
-- Update package.json for followings:
-  - name:
-    - Must be with `@dreamworld` scope.
-      - eg. "name": "@dreamworld/dw-sample-npm-module"
-  - version:
-    - Must be `"version": "0.0.0-development"`
-  - devDependencies: Add `semantic-release` with `beta` version
-```
-  "devDependencies": {
-    "semantic-release": "beta"
-  }
-```
-  - publishConfig:
+# How to setup setup a new project
+- Create New GitHub repo with readme file.
+- Clone repo to your workspace and perform following steps in your workspace.
+- Initialize npm package with your desired build tool. e.g. `npm init`
+  - Set your package group/scope to `@dreamworld`. e.g. `"name": "@dreamworld/dw-sample-npm-module"`
+  - Set version to `0.0.0-development`
+- Add `publishConfig` to `package.json`.
 ```
   "publishConfig": {
     "access": "public"
   }
 ```
+- Copy/Add `.gitignore`. Make sure that `package-lock.json` is added to `.gitignore`.
+- Integrate `semantic-release` and `circleci`.
+- Add semantic-releae:
+  - Add following `devDependencies`.
+```
+  "devDependencies": {
+    "semantic-release": "beta"
+  }
+```
+  - Copy `release.config.js` from this project to root directory of your project
 - Copy `.circleci` folder from this project to root directory of your project
-- Copy `release.config.js` from this project to root directory of your project
-- Create GitHub project
-- Push this project to Github
+- Commit this changes and push to `master` branch. Make sure that semantic-prefix `fix:`, `feat:` etc. are NOT applied
+to this commit message.
 - Setup CircleCI for automated deployment
   - Open [CircleCI dashboard](https://circleci.com/add-projects/gh/DreamworldSolutions)
   - User your Github account to login. (signup for CircleCI if you haven't)
-  - Find this newly created project
-  - Click on `Setup Project` button
-  - Click on `Start Building` button
+  - Find this newly created project.
+  - Click on `Setup Project` button.
+  - Click on `Start Building` button.
+- Ask other team-members to follow this circleci project to watch logs & get notified on new build.
+- Create your first feature branch to start developing initial feature. e.g. `feature/init`. Follow this guideline for
+snapshot version deployment during feature development.
+- When this feature branch is merged to `master` with commit message is prefixed with `feat:` first version `1.0.0` is
+released to the public NPM registry.
 
-## Setup for existing projects
-- You would need to follow all the steps as above, excluding initial project creating and Github repository.
-- You would also need to create a Git tag of last release to appropriate commit.
-  - it should be in vMajor.Minor.Patch format. (`v` is prefix)
-  - eg. `v1.2.0`
-- Based on this latest tag, it would automatically determine next release versions.
+# Setup for existing projects
+- Make sure that your package name is `@dreamworld/xxx`.
+- Change version to `0.0.0-development`.
+- Follow same steps from above guide following "initialize npm package ...".
+- You would also need to create a Git tag of last release to appropriate commit.It should be in vMajor.Minor.Patch 
+format. (`v` is prefix) eg. `v1.2.0`. Based on this latest tag, it would automatically determine next release versions.
+**This step can be safely skipped if no version is yet released.**
 
 
 ## Notes
