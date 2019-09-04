@@ -23,13 +23,13 @@
 - Copy `.circleci` folder from this project to root directory of your project
 - Commit this changes and push to `master` branch. Make sure that semantic-prefix `fix:`, `feat:` etc. are NOT applied
 to this commit message.
-- Setup CircleCI for automated deployment
+- Setup CircleCI for automated deployment. **Can be done by Admin only. So, Ask Chirag to perfomr this step**
   - Open [CircleCI dashboard](https://circleci.com/add-projects/gh/DreamworldSolutions)
   - User your Github account to login. (signup for CircleCI if you haven't)
   - Find this newly created project.
   - Click on `Setup Project` button.
   - Click on `Start Building` button.
-- Ask other team-members to follow this circleci project to watch logs & get notified on new build.
+- Follow the circle-ci project & Ask other team members to do the same to watch logs & get notified on new build.
 - Create your first feature branch to start developing initial feature. e.g. `feature/init`. Follow this guideline for
 snapshot version deployment during feature development.
 - When this feature branch is merged to `master` with commit message is prefixed with `feat:` first version `1.0.0` is
