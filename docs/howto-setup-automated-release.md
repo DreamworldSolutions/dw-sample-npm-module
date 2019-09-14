@@ -10,7 +10,7 @@
     "access": "public"
   }
 ```
-- Copy/Add `.gitignore`. Make sure that `package-lock.json` is added to `.gitignore`.
+- Copy/Add `.gitignore`. Make sure that `package-lock.json` is added to `.gitignore`. And `yarn.lock` **is not ignored**.
 - Integrate `semantic-release` and `circleci`.
 - Add semantic-releae:
   - Add following `devDependencies`.
