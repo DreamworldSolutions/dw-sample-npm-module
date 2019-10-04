@@ -16,7 +16,13 @@
   - Add following `devDependencies`.
 ```
   "devDependencies": {
-    "semantic-release": "beta"
+    "semantic-release": "16.0.0-beta.23"
+  }
+```
+  - Add following `resolutions`. (as `dist-tag` isn't picked up by latest relese.)
+```
+  "resolutions": {
+    "@semantic-release/npm": "5.2.0-beta.5"
   }
 ```
   - Copy `release.config.js` from this project to root directory of your project
@@ -39,7 +45,7 @@ released to the public NPM registry.
 - Make sure that your package name is `@dreamworld/xxx`.
 - Change version to `0.0.0-development`.
 - Follow same steps from above guide following "initialize npm package ...".
-- You would also need to create a Git tag of last release to appropriate commit.It should be in vMajor.Minor.Patch 
+- You would also need to create a Git tag of last release to appropriate commit.It should be in vMajor.Minor.Patch
 format. (`v` is prefix) eg. `v1.2.0`. Based on this latest tag, it would automatically determine next release versions.
 **This step can be safely skipped if no version is yet released.**
 
