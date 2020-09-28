@@ -1,6 +1,6 @@
 # Sample NPM package
 
-A Sample NPM package with automated deployment based on branches to NPM release version and nexus3 for snapshot releases.
+A Sample NPM package with automated deployment based on branches to NPM for both release snapshot releases.
 
 ## Docs
 - [How to setup automated CI/CD for package new or existing project](docs/howto-setup-automated-release.md)
