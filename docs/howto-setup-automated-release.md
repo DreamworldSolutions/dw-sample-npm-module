@@ -12,20 +12,28 @@
 ```
 - Copy/Add `.gitignore`. Make sure that `package-lock.json` is added to `.gitignore`. And `yarn.lock` **is not ignored**.
 - Integrate `semantic-release` and `circleci`.
-- Add semantic-releae:
-  - Add following `devDependencies`.
+- Add semantic-release:
+  - Add following `devDependencies` and `release` configuration to `package.json`.
+
 ```
   "devDependencies": {
-    "semantic-release": "16.0.0-beta.23"
+    "semantic-release": "17.0.8"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      {
+          "name": "feature/*",
+          "prerelease": "${name.replace(/^feature\\//g, \"\")}",
+          "channel": "${name.replace(/^feature\\//g, \"\")}"
+      }
+    ]
   }
 ```
-  - Add following `resolutions`. (as `dist-tag` isn't picked up by latest relese.)
-```
-  "resolutions": {
-    "@semantic-release/npm": "5.2.0-beta.5"
-  }
-```
-  - Copy `release.config.js` from this project to root directory of your project
+
+- [Optional] If its an ES module, add `"type": "module"` in package.json.
+
 - Copy `.circleci` folder from this project to root directory of your project
 - Commit this changes and push to `master` branch. Make sure that semantic-prefix `fix:`, `feat:` etc. are NOT applied
 to this commit message.
@@ -44,11 +52,11 @@ released to the public NPM registry.
 # Setup for existing projects
 - Make sure that your package name is `@dreamworld/xxx`.
 - Change version to `0.0.0-development`.
-- Follow same steps from above guide following "initialize npm package ...".
+- Follow same steps from above guide from `Initialize npm package ...` steps.
 - You would also need to create a Git tag of last release to appropriate commit.It should be in vMajor.Minor.Patch
 format. (`v` is prefix) eg. `v1.2.0`. Based on this latest tag, it would automatically determine next release versions.
 **This step can be safely skipped if no version is yet released.**
 
 
 ## Notes
-- You would never need to update your package version in package.json file. It would always stay as above.
+- You would never need to update your package version in `package.json` file. It would always stay as above.

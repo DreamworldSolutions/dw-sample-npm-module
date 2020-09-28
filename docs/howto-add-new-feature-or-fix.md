@@ -8,9 +8,9 @@
 - Automated release is triggered when commit message has following prefix:
   - `feat`: this would release a minor(feature) version.
   - `fix`: this would release a patch version.
-  - `BREAKING CHANGE:` this would release a major version.
+  - `BREAKING CHANGE:` this would release a major version. It **MUST** be in a footer.
   - See [commit message format](https://semantic-release.gitbook.io/semantic-release/#commit-message-format) for more information.
-- Snapshot/feature releases are published to internal nexus3 repository. Released version is accessible via `myFeature` tag.
+- Snapshot/feature releases are published to NPM repository. Released version is accessible via `myFeature` tag.
   - eg. `"my-package-name": "myFeature"`
   - Performing `npm update @dreamworld/my-package-name` would use latest available version of `myFeature`
   - Notice `myFeature` is the branch name that you created.
