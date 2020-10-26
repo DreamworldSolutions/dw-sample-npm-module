@@ -9,3 +9,5 @@ A Sample NPM package with automated deployment based on branches to NPM for both
 
 
 > To skip automated release (CI/CD pipeline), add `[ci skip]` into your git commit message.
+
+
