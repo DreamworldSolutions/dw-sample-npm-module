@@ -6,7 +6,7 @@ A Sample NPM package with automated deployment based on branches to NPM for both
 - [How to setup automated CI/CD for package new or existing project](docs/howto-setup-automated-release.md)
 - [How to add new feature or fix](docs/howto-add-new-feature-or-fix.md)
 - [How to release final version](docs/howto-release-final-version.md)
-- [How to update type to `module`][docs/howto-type-module.md]
+- [How to update type to `module`](docs/howto-type-module.md)
 
 > To skip automated release (CI/CD pipeline), add `[ci skip]` into your git commit message.
 
