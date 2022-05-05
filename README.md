@@ -21,3 +21,11 @@ Refer to [this document.](docs/howto-type-module.md)
 When there is a Pull Request open for the branch, CircleCI would consider it as if its run from the PR, so semantic-release would not be able to release the version.
 
 To fix it, just temporary close the PR and trigger the Pipeline again. Once its complete, you can re-open the same PR.
+
+### Pipeline completes, but dosn't release new version saying "There are no relevant changes, so no new version is released."
+
+This could happen due to multiple reasons:
+- Commit message prefix is not proper. (most common) eg:
+  - `fix:START upgrade mwc-radio to latest version` This does not have space after `:`
+- The `feature/*` branch and `master` branch are at the same point. (e.g there isn't any new commit on feature branch, so there is nothing new)
+
