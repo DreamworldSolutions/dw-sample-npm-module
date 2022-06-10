@@ -23,7 +23,7 @@
   "homepage": "https://github.com/DreamworldSolutions/dw-sample-npm-module#README",
   "dependencies": {},
   "devDependencies": {
-    "semantic-release": "17.4.2"
+    "semantic-release": "19.0.3"
   },
   "publishConfig": {
     "access": "public"
