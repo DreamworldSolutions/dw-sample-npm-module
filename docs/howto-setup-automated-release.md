@@ -57,6 +57,18 @@ released to the public NPM registry.
 format. (`v` is prefix) eg. `v1.2.0`. Based on this latest tag, it would automatically determine next release versions.
 **This step can be safely skipped if no version is yet released.**
 
+# Setup for Forked repository
+- Same as above "Setup for existing projects", but make sure to update the repository URLs in `package.json` as well.
+
+# Setup for typescript repository
+For any Javascript NPM package, we just publish the source code to NPM registry. But for Typescript projects, they need to be complied accordingly.
+
+- Same as above "Setup for existing projects"
+- Configure pipeline to build the package in the `circleci/config.yml` file, before releasing the package.
+
+See this [DreamworldSolutions/addon-redux](https://github.com/DreamworldSolutions/addon-redux/pull/1) repository that we forked and setup CircleCI Pipeline.
+- [Commit1](https://github.com/DreamworldSolutions/addon-redux/commit/9667e0189c8f45ce60087d1080f073eeb60f1a00)
+- [Commit2](https://github.com/DreamworldSolutions/addon-redux/commit/dffc492cf38d1c6518bff65f595e0056af561a8c)
 
 ## Notes
 - You would never need to update your package version in `package.json` file. It would always stay as above.
